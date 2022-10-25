@@ -24,11 +24,9 @@
         }
     
         public function nomeFunzione() {    
-        ?>
-            <p>
-            <?=$this->titolo ?> è un film con <?=$protagonista ?> uscito nelle sale nel <?=$this->anno ?> in lingua <?=$this->lingua ?>
-            </p>
-        <?php
+
+            var_dump($this->titolo . "è un film con" . $protagonista . "uscito nelle sale nel" . $this->anno . "in lingua" . $this->lingua); 
+        
         }
 
     }
