@@ -14,6 +14,7 @@
         public $titolo;
         public $anno;
         public $protagonista;
+        public $attori = [];
         public $lingua;
 
         public function __construct($_titolo, $_anno, $_protagonista, $_lingua){
@@ -23,6 +24,13 @@
             $this->lingua=$_lingua;
         }
     
+        public function addActor($_attore){
+            if(!in_array($_attore, $this->attori))
+            $this->attori[] = $_attore;
+                                        
+
+        }
+
         public function nomeFunzione() {    
 
             var_dump($this->titolo . "è un film con" . $protagonista . "uscito nelle sale nel" . $this->anno . "in lingua" . $this->lingua); 
@@ -32,15 +40,19 @@
     }
 
     $mediterraneo = new Movie("Mediterraneo",1991,"Abatantuono","Italiano");
+    $mediterraneo->addActor("Bisio");
+    $mediterraneo->addActor("Vattela");
 
     $taken = new Movie("Taken", 2012, "Liam", "Inglese");
-
+    $taken->addActor("Tommaso");
+    $taken->addActor("Gloria");
 
 
 
 var_dump($mediterraneo);
 var_dump($taken);
 ?>
+
 
 </body>
 </html>
